@@ -3,7 +3,7 @@
     
     $listName = $_POST['lijstNaam'];
     
-    $sql = "INSERT `lijst` SET lijstNaam = :listName";
+    $sql = "INSERT INTO `lijst` SET lijstNaam = :listName";
     $query = $conn->prepare($sql);
     $query->bindParam(":listName", $listName);
     $query->execute();

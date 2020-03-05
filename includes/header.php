@@ -20,4 +20,4 @@
 <body>
 
 <div class="container lead">
-<a class="<?php if($homePage == $currentPage){?>d-none <?php }else{?>d-block<?php } ?> mt-4 mb-4 text-dark" href="index.php"><i class="fas fa-undo fa-lg"></i></a>
+<a class="<?php if($homePage == $currentPage || $currentPage == ''){?>d-none <?php }else{?>d-block<?php } ?> mt-4 mb-4 text-dark" href="index.php"><i class="fas fa-undo fa-lg"></i></a>
