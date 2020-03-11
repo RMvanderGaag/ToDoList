@@ -13,7 +13,7 @@ $result = $query->fetch();
 
 
 <h2 class="display-4">Delete list</h2>
-<p>Weet je zeker dat je de lijst <strong><?php echo $result['lijstNaam'] ?></strong> wilt verwijderen</p>
+<p>Weet je zeker dat je de lijst <b><?php echo $result['lijstNaam'] ?></b> wilt verwijderen</p>
 <a href="dbHandling/removeList.php?id=<?php echo $listId ?>" class="btn btn-danger text-white">Delete</a>
 
 
