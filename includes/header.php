@@ -1,7 +1,7 @@
 <?php 
 
     header('Content-type: text/html; charset=iso-8859-1');
-    require 'includes/dbConnect.php';
+    require 'dbConnect.php';
 
     $sql = "SELECT * FROM `lijst`";
     $query = $conn->prepare($sql);

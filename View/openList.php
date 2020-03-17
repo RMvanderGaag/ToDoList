@@ -1,4 +1,4 @@
-<?php include 'includes/header.php';
+<?php include '../includes/header.php';
 $listId = $_GET['id'];
 
 session_start();
@@ -54,4 +54,4 @@ $results = $query2->fetchAll();
 
 
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

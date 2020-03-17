@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; 
+<?php include '../includes/header.php'; 
 
 $taskId = $_GET['id'];
 
@@ -12,7 +12,7 @@ $result = $query->fetch();
 
 <h2 class="display-4">Taak bewerken</h2>
 
-<form action="dbHandling/updateTask.php?id=<?php echo $result['id'] ?>" method="post">
+<form action="../dbHandling/updateTask.php?id=<?php echo $result['id'] ?>" method="post">
     <div class="form-group">
         <label for="">Geef een niewe naam aan de taak</label>
         <input type="text" class="form-control" name="newName" value="<?php echo $result['taakNaam'] ?>">
@@ -31,4 +31,4 @@ $result = $query->fetch();
 </form>
 
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

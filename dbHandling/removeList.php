@@ -1,6 +1,6 @@
 <?php
     //Maakt een connectie met de database
-    include '../includes/dbConnect.php';
+    require '../includes/dbConnect.php';
 
     //Haalt het ID op van de lijst doormiddel van een GET
     $listId = $_GET['id'];

@@ -1,6 +1,6 @@
 <?php 
     //Maakt een connectie naar de database
-    include '../includes/dbConnect.php';
+    require '../includes/dbConnect.php';
     
     //Krijgt de lijstNaam van het eerder ingevoerde form en stopt het in een variabele
     $listName = $_POST['lijstNaam'];

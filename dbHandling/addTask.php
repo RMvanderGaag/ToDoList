@@ -1,6 +1,6 @@
 <?php 
     //Maakt een connectie naar de database
-    include '../includes/dbConnect.php';
+    require '../includes/dbConnect.php';
     
     //Alle ingevoerde informatie die op de vorige pagina is ingevuld word in een variabele gestopt
     $taskName = $_POST['taakNaam'];
@@ -18,5 +18,5 @@
     $query->execute();
 
     //Stuurt de gebruiker terug naar de pagina met alle taken erin
-    header('location: ../openList.php?id='. $listId);
+    header('location: ../View/openList.php?id='. $listId);
 

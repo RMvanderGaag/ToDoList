@@ -1,6 +1,6 @@
 <?php
     //Connectie naar de database
-    include '../includes/dbConnect.php';
+    require '../includes/dbConnect.php';
     
     //Alle ingevoerde informatie die op de vorige pagina is ingevuld word in een variabele gestopt
     $listId = $_GET['id'];
