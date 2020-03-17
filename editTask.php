@@ -8,9 +8,7 @@ $query->bindParam(":taskId", $taskId);
 $query->execute();
 
 $result = $query->fetch();
-
 ?>
-
 
 <h2 class="display-4">Taak bewerken</h2>
 
@@ -18,12 +16,16 @@ $result = $query->fetch();
     <div class="form-group">
         <label for="">Geef een niewe naam aan de taak</label>
         <input type="text" class="form-control" name="newName" value="<?php echo $result['taakNaam'] ?>">
+        <label for="">Taak beschrijving</label>
+        <textarea class="form-control" name="taakBeschrijving" id="" cols="30" rows="10"><?php echo $result['taakBeschrijving'] ?></textarea>
         <label for="">Status</label>
         <select class="form-control" name="statusSelect" id="">
             <option <?php if($result['taakStatus'] == 'Bezig'){ echo 'selected'; } ?> value="Bezig">Bezig</option>
             <option <?php if($result['taakStatus'] == 'Afgerond'){ echo 'selected'; } ?> value="Afgerond">Afgerond</option>
             <option <?php if($result['taakStatus'] == 'Niet begonnen'){ echo 'selected'; } ?> value="Niet begonnen">Niet begonnen</option>
         </select>
+        <label for="">Tijd(in minuten)</label>
+        <input type="number" class="form-control" name="taakDuur" value="<?php echo $result['taakDuur'] ?>">
     </div>
     <input type="submit" class="btn btn-success" value="Bewerken">
 </form>
