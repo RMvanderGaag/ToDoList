@@ -1,5 +1,7 @@
 <?php include 'includes/header.php'; 
 
+$statusArray = ['Bezig', 'Afgerond', 'Niet begonnen'];
+
 $taskId = $_GET['id'];
 
 $sql = "SELECT * FROM `taak` WHERE id = :taskId";
@@ -8,6 +10,7 @@ $query->bindParam(":taskId", $taskId);
 $query->execute();
 
 $result = $query->fetch();
+
 
 ?>
 
@@ -20,9 +23,9 @@ $result = $query->fetch();
         <input type="text" class="form-control" name="newName" value="<?php echo $result['taakNaam'] ?>">
         <label for="">Status</label>
         <select class="form-control" name="statusSelect" id="">
-            <option <?php if($result['taakStatus'] == 'Bezig'){ echo 'selected'; } ?> value="Bezig">Bezig</option>
-            <option <?php if($result['taakStatus'] == 'Afgerond'){ echo 'selected'; } ?> value="Afgerond">Afgerond</option>
-            <option <?php if($result['taakStatus'] == 'Niet begonnen'){ echo 'selected'; } ?> value="Niet begonnen">Niet begonnen</option>
+            <?php for($i = 0; $i < count($statusArray); $i++){ ?> 
+            <option <?php if($result['taakStatus'] == $statusArray[$i]){ echo 'selected'; } ?> value="<?php echo $statusArray[$i] ?>"><?php echo $statusArray[$i] ?></option>
+            <?php }  ?>
         </select>
     </div>
     <input type="submit" class="btn btn-success" value="Bewerken">
