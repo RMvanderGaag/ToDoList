@@ -10,11 +10,6 @@ $query->bindParam(":taskId", $taskId);
 $query->execute();
 
 $result = $query->fetch();
-<<<<<<< HEAD:editTask.php
-
-
-=======
->>>>>>> a0148ae6ca42c4e1c423d6f37baa86aa58e72bc4:View/editTask.php
 ?>
 
 <h2 class="display-4">Taak bewerken</h2>
