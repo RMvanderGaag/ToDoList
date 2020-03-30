@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; 
+<?php include '../includes/header.php'; 
 
 $listId = $_GET['id'];
 
@@ -14,7 +14,7 @@ $result = $query->fetch();
 
 <h2 class="display-4">Lijst bewerken</h2>
 
-<form action="dbHandling/updateList.php?id=<?php echo $result['id'] ?>" method="post">
+<form action="../dbHandling/updateList.php?id=<?php echo $result['id'] ?>" method="post">
     <div class="form-group">
         <label for="">Geef een niewe naam aan de lijst</label>
         <input type="text" class="form-control" name="newName" value="<?php echo $result['lijstNaam'] ?>">
@@ -23,4 +23,4 @@ $result = $query->fetch();
 </form>
 
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
