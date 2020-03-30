@@ -1,5 +1,4 @@
-<?php include 'includes/header.php'; 
-
+<?php include '../includes/header.php';
 $listId = $_GET['id'];
 
 session_start();
@@ -24,16 +23,24 @@ $results = $query2->fetchAll();
 
 <h2 class="display-4"><?php echo $result['lijstNaam'] ?></h2>
 <p class="lead">Taken</p>
+<div>
+    <button class="btn" onclick="filterList('all')">Show all</button>
+    <button class="btn" onclick="filterList('Bezig')">Bezig</button>
+    <button class="btn" onclick="filterList('Afgerond')">Afgerond</button>
+    <button class="btn" onclick="filterList('Niet begonnen')">Niet begonnen</button>
+</div>
 <table class="table table-striped lead">
     <thead>
         <th scope="col">Naam</th>
-        <th scope="col"><span onclick="sortTable('Status')">Status</span></th>
-        <th scope="cole"><span onclick="sortTable('Status')">Tijd</span></th>
+        <th scope="col">Beschrijving</th>
+        <th scope="col">Status</th>
+        <th scope="col">Duur(Minuten)</th>
         <th></th>
     </thead>
     <?php foreach ($results as $row){ ?>
-    <tr class="clickableRow">
+    <tr class="tableRow <?php echo $row['taakStatus'] ?>">
         <td><?php echo $row['taakNaam']?></td>
+        <td><?php echo $row['taakBeschrijving'] ?></td>
         <td><?php echo $row['taakStatus'] ?></td>
         <td><?php echo $row['taakDuur'] ?></td>
         <td>
@@ -47,4 +54,4 @@ $results = $query2->fetchAll();
 
 
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
