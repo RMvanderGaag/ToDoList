@@ -6,6 +6,8 @@
     $taskName = $_POST['taakNaam'];
     $listId = $_GET['listId'];
     $taakDuur = $_POST['taakDuur'];
+    
+    $sql = "INSERT INTO `taak` SET taakNaam = :taskName, taakStatus = 'Niet begonnen', taakDuur = :taakDuur, listId = :listId";
     $taakBeschrijving = $_POST['taakBeschrijving'];
     
     //Er word een query gemaakt die de variabelen in de database zet

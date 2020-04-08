@@ -1,5 +1,7 @@
 <?php include '../includes/header.php'; 
 
+$statusArray = ['Bezig', 'Afgerond', 'Niet begonnen'];
+
 $taskId = $_GET['id'];
 
 $sql = "SELECT * FROM `taak` WHERE id = :taskId";
@@ -20,9 +22,9 @@ $result = $query->fetch();
         <textarea class="form-control" name="taakBeschrijving" id="" cols="30" rows="10"><?php echo $result['taakBeschrijving'] ?></textarea>
         <label for="">Status</label>
         <select class="form-control" name="statusSelect" id="">
-            <option <?php if($result['taakStatus'] == 'Bezig'){ echo 'selected'; } ?> value="Bezig">Bezig</option>
-            <option <?php if($result['taakStatus'] == 'Afgerond'){ echo 'selected'; } ?> value="Afgerond">Afgerond</option>
-            <option <?php if($result['taakStatus'] == 'Niet begonnen'){ echo 'selected'; } ?> value="Niet begonnen">Niet begonnen</option>
+            <?php for($i = 0; $i < count($statusArray); $i++){ ?> 
+            <option <?php if($result['taakStatus'] == $statusArray[$i]){ echo 'selected'; } ?> value="<?php echo $statusArray[$i] ?>"><?php echo $statusArray[$i] ?></option>
+            <?php }  ?>
         </select>
         <label for="">Tijd(in minuten)</label>
         <input type="number" class="form-control" name="taakDuur" value="<?php echo $result['taakDuur'] ?>">
