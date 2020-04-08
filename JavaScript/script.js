@@ -9,7 +9,6 @@ function filterList(c){
         if(c == 'all'){
             //Als de parameter gelijk is aan 'all' dan word de display 'table-row' 
             x[i].style.display = 'table-row';
-            return;
         }else{
             //Anders word bij elke rij de display op 'none' gezet 
             x[i].style.display = 'none';
