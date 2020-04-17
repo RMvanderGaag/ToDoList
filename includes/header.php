@@ -3,6 +3,7 @@
     header('Content-type: text/html; charset=iso-8859-1');
     require 'dbConnect.php';
 
+    //haalt alle gegevens van de lijst op
     $sql = "SELECT * FROM `lijst`";
     $query = $conn->prepare($sql);
     $query->execute();
@@ -10,7 +11,8 @@
     $result = $query->fetchAll();
 
     $homePage = 'index.php';
-    $currentPage = substr($_SERVER["REQUEST_URI"],strrpos($_SERVER["REQUEST_URI"],"/")+1);
+    //haalt de pagina op waar je op dit moment ben.
+    $currentPage = substr($_SERVER["REQUEST_URI"], strrpos($_SERVER["REQUEST_URI"],"/")+1);
 ?>
 <html lang="en">
 <head>
@@ -23,4 +25,5 @@
 <body>
 
 <div class="container lead">
+<!-- Als de gebruiker op de begin pagina is laat hij geen terug knop zien, anders word er wel een terug knop displayed -->
 <a class="<?php if($homePage == $currentPage || $currentPage == ''){?>d-none <?php }else{?>d-block<?php } ?> mt-4 mb-4 text-dark" href="../index.php"><i class="fas fa-undo fa-lg"></i></a>

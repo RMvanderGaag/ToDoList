@@ -1,9 +1,11 @@
 <?php include '../includes/header.php'; 
 
+//Er word een array aangemaakt met de status opties
 $statusArray = ['Bezig', 'Afgerond', 'Niet begonnen'];
 
 $taskId = $_GET['id'];
 
+//Er word een taak opgehaald met het meegstuurde id
 $sql = "SELECT * FROM `taak` WHERE id = :taskId";
 $query = $conn->prepare($sql);
 $query->bindParam(":taskId", $taskId);

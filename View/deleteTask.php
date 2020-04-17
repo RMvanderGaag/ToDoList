@@ -2,6 +2,7 @@
 
 $taskId = $_GET['id'];
 
+//haalt de taak op met het meegestuurde id
 $sql = "SELECT * FROM `taak` WHERE id = :taskId";
 $query = $conn->prepare($sql);
 $query->bindParam(":taskId", $taskId);

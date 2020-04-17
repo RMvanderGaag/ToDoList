@@ -1,9 +1,7 @@
 <?php include '../includes/header.php';
 $listId = $_GET['id'];
 
-session_start();
-$_SESSION['id'] = $listId;
-
+//haalt de lijst op met het meegestuurde id
 $sql = "SELECT * FROM `lijst` WHERE id = :listId";
 $query = $conn->prepare($sql);
 $query->bindParam(":listId", $listId);
@@ -11,6 +9,7 @@ $query->execute();
 
 $result = $query->fetch();
 
+//haalt alle taken op met de bijbehorende lijst id
 $sql2 = "SELECT * FROM `taak` WHERE listId = :listId";
 $query2 = $conn->prepare($sql2);
 $query2->bindParam(":listId", $listId);
@@ -24,6 +23,7 @@ $results = $query2->fetchAll();
 <h2 class="display-4"><?php echo $result['lijstNaam'] ?></h2>
 <p class="lead">Taken</p>
 <div>
+<!-- filter knoppen -->
     <button class="btn" onclick="filterList('all')">Show all</button>
     <button class="btn" onclick="filterList('Bezig')">Bezig</button>
     <button class="btn" onclick="filterList('Afgerond')">Afgerond</button>

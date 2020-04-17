@@ -20,3 +20,4 @@ function filterList(status){
         statusRow[j].style.display = 'table-row'
     }
 }
+

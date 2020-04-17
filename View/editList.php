@@ -2,6 +2,7 @@
 
 $listId = $_GET['id'];
 
+//haalt de lijst op met het meegestuurde id
 $sql = "SELECT * FROM `lijst` WHERE id = :listId";
 $query = $conn->prepare($sql);
 $query->bindParam(":listId", $listId);
