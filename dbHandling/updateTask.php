@@ -24,5 +24,7 @@
     $query->bindParam(':taakDuur', $taakDuur);
     $query->execute();
 
+    $conn = null;
+
     //Stuurt de gebruiker terug naar de overzicht van taken
     header('location: ../View/openList.php?id='. $listId);

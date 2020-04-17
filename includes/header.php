@@ -13,6 +13,7 @@
     $homePage = 'index.php';
     //haalt de pagina op waar je op dit moment ben.
     $currentPage = substr($_SERVER["REQUEST_URI"], strrpos($_SERVER["REQUEST_URI"],"/")+1);
+
 ?>
 <html lang="en">
 <head>

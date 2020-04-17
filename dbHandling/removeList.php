@@ -17,5 +17,7 @@
     $query1->bindParam(":listId", $listId);
     $query1->execute();
 
+    $conn = null;
+
     //De gebruiker word terug gestuurd naar de hoofdPagina
     header('location: ../index.php');

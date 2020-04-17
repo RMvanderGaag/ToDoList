@@ -19,6 +19,8 @@
     $query->bindParam(":taakBeschrijving", $taakBeschrijving);
     $query->execute();
 
+    $conn = null;
+
     //Stuurt de gebruiker terug naar de pagina met alle taken erin
     header('location: ../View/openList.php?id='. $listId);
 

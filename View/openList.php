@@ -17,6 +17,7 @@ $query2->execute();
 
 $results = $query2->fetchAll();
 
+$conn = null;
 ?>
 
 

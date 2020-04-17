@@ -16,5 +16,7 @@
     $query->bindParam(":taskId", $taskId);
     $query->execute();
 
+    $conn = null;
+
     //De gebruiker word terug gestuurd naar het overzicht van taken
     header('location: ../View/openList.php?id='. $listId);

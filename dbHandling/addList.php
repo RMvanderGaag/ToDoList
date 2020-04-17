@@ -11,6 +11,8 @@
     $query->bindParam(":listName", $listName);
     $query->execute();
 
+    $conn = null;
+
     //Stuurt de gebruiker terug naar de hoofdpagina
     header('location: ../index.php');
 
