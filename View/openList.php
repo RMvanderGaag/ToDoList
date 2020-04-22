@@ -17,6 +17,9 @@ $query2->execute();
 
 $results = $query2->fetchAll();
 
+session_start();
+$_SESSION['id'] = $listId;
+
 $conn = null;
 ?>
 

@@ -12,6 +12,7 @@ $query->bindParam(":taskId", $taskId);
 $query->execute();
 
 $result = $query->fetch();
+
 ?>
 
 <h2 class="display-4">Taak bewerken</h2>

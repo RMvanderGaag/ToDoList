@@ -2,7 +2,7 @@
     //Zet de benodigheden om inteloggen in de database in variabelen
     $servername = "localhost";
     $username = "root";
-    $password = "mysql";
+    $password = ""; //GEEN WW VOOR WAMPSERVER (TYPE 'mysql' VOOR AMPPS)
     $myDB = "todolist";
 
     try{
